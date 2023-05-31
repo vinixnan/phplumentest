@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+  lumen:
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api:/var/www/html/
+    build: .
+    command: php -S lumen:8000 -t public
+    restart: always
