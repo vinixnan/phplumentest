@@ -16,3 +16,6 @@ WORKDIR /var/www/html/
 COPY ./api /var/www/html/
 
 RUN composer update
+
+#Run tests
+RUN vendor/bin/phpunit

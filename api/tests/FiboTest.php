@@ -23,4 +23,16 @@ class FiboTest extends TestCase
             $this->assertEquals($fibonacci_original, $fibonacci_iteractive);
         }
     }
+
+    public function test_fibonacci_endpoint(){
+        $response = $this->call('GET', '/fibo', ['count' => '6']);
+        $this->assertEquals(13, $response->json()['fibonacci']);
+        $this->assertEquals(200, $response->status());
+    }
+
+    public function test_fibonacci_fast_endpoint(){
+        $response = $this->call('GET', '/fibofast', ['count' => '6']);
+        $this->assertEquals(13, $response->json()['fibonacci']);
+        $this->assertEquals(200, $response->status());
+    }
 }
