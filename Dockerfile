@@ -24,3 +24,6 @@ RUN vendor/bin/phpunit
 RUN php artisan cache:clear
 RUN php artisan swagger-lume:generate
 RUN php artisan swagger-lume:publish
+
+EXPOSE 8001
+CMD php -S 0.0.0.0:8001 public/index.php
