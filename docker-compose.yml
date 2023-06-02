@@ -7,5 +7,5 @@ services:
     volumes:
       - ./api:/var/www/html/
     build: .
-    command: php -S lumen:8000 -t public
+    command: php -S lumen:8000 public/index.php
     restart: always

@@ -19,3 +19,8 @@ RUN composer update
 
 #Run tests
 RUN vendor/bin/phpunit
+
+#Swagger
+RUN php artisan cache:clear
+RUN php artisan swagger-lume:generate
+RUN php artisan swagger-lume:publish
